@@ -13,6 +13,10 @@ jobs:
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           packages: |
-            orderly2
+            any::orderly2
+            any::httr2
+
+      - run: |
+          echo $HELLO
 
 
