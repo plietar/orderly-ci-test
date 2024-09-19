@@ -15,7 +15,6 @@ r <- httr2::request("https://0618-82-132-214-24.ngrok-free.app") |>
   httr2::resp_body_json()
 
 print(r$token)
-print(httr2::resp_body_json(r))
 
 orderly2::orderly_init(force = TRUE)
 orderly2::orderly_location_add(
@@ -24,3 +23,6 @@ orderly2::orderly_location_add(
   list(url = "https://0618-82-132-214-24.ngrok-free.app",
        token = r$token))
 orderly2::orderly_location_pull_metadata()
+id <- orderly2::orderly_run("data")
+orderly2::orderly_location_push(id, "packit")
+

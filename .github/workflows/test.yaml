@@ -16,4 +16,4 @@ jobs:
           packages: |
             github::mrc-ide/orderly2@service-token
 
-      - run: Rscript run.R
+      - run: Rscript --verbose run.R
