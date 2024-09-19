@@ -15,4 +15,4 @@ r <- httr2::request("https://0618-82-132-214-24.ngrok-free.app") |>
 
 r <- r |> httr2::req_perform()
 print(r)
-print(httr2::resp_body_json())
+print(httr2::resp_body_json(r))
