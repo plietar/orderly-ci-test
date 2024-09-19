@@ -10,9 +10,9 @@ response <- httr2::request(url) |>
 print(response)
 r <- httr2::request("https://0618-82-132-214-24.ngrok-free.app") |>
   httr2::req_url_path("/auth/login/jwt") |>
-  httr2::req_body_json(list(token = response$value))
-print(r)
+  httr2::req_body_json(list(token = response$value)) |>
+  httr2::req_perform() |>
+  httr2::resp_body_json()
 
-r <- r |> httr2::req_perform()
-print(r)
+print(r$token)
 print(httr2::resp_body_json(r))
