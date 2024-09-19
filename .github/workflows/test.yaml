@@ -5,6 +5,7 @@ jobs:
       id-token: write
       contents: read
     runs-on: ubuntu-latest
+    environment: packit
     steps:
       - uses: actions/checkout@v4
       - uses: r-lib/actions/setup-r@v2
