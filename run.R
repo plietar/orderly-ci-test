@@ -7,3 +7,4 @@ r <- r |> httr2::req_url_query(audience="xxxx") |> httr2::req_auth_bearer_token(
 print(r)
 r <- r |> httr2::req_perform()
 print(r)
+print(r |> httr2::resp_body_json())
