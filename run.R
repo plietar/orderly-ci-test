@@ -23,3 +23,4 @@ orderly2::orderly_location_add(
   "packit",
   list(url = "https://0618-82-132-214-24.ngrok-free.app",
        token = r$token))
+orderly2::orderly_location_pull_metadata()
