@@ -7,4 +7,12 @@ r <- r |> httr2::req_url_query(audience="xxxx") |> httr2::req_auth_bearer_token(
 print(r)
 r <- r |> httr2::req_perform()
 print(r)
-print(r |> httr2::resp_body_json())
+oidc_token <- httr2::resp_body_json()$token
+
+r <- httr2::request("https://0618-82-132-214-24.ngrok-free.app") |>
+  httr2::req_url_path("/auth/jwt") |>
+  httr2::req_body_json(list(token = oidc_token))
+
+r <- r |> httr2::req_perform()
+print(r)
+print(httr2::resp_body_json())
