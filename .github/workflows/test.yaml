@@ -17,5 +17,5 @@ jobs:
             any::orderly2
 
       - run: |
-          R -e "orderly2::orderly_init()"
+          R -e "orderly2::orderly_init(force = TRUE)"
           Rscript run.R
