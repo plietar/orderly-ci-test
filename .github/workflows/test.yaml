@@ -15,9 +15,7 @@ jobs:
         with:
           packages: |
             any::orderly2
-            any::httr2
 
       - run: |
-          echo $HELLO
-
-
+          R -e "orderly2::orderly_init()"
+          Rscript run.R
