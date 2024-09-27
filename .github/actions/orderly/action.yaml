@@ -13,10 +13,8 @@ runs:
   using: "composite"
   steps:
     - name: Install orderly2
-      shell: Rscript {0}
-      run: |
-        if (!requireNamespace("orderly2", quietly=TRUE)) {
-          install.packages(
-            "orderly2",
-            repos = c("https://mrc-ide.r-universe.dev", "https://cloud.r-project.org"))
-        }
+      run: Rscript --verbose ${{ github.action_path }}/orderly-init.R ${{ inputs.location-name }} ${{ inputs.packit-url }}
+
+    - name: Logging in to Packit
+      if: ${{ inputs.packit-url != null }}
+      run: Rscript --verbose ${{ github.action_path }}/packit-login.R ${{ inputs.location-name }} ${{ inputs.packit-url }}
