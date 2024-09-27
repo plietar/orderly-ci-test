@@ -12,3 +12,5 @@ jobs:
           extra-repositories: |
             https://mrc-ide.r-universe.dev
       - uses: ./.github/actions/orderly
+        with:
+          packit-url: https://packit.dide.ic.ac.uk/reside
