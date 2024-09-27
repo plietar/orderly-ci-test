@@ -20,5 +20,3 @@ runs:
             "orderly2",
             repos = c("https://mrc-ide.r-universe.dev", "https://cloud.r-project.org"))
         }
-
-    - name: Fetch 
