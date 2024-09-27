@@ -16,6 +16,5 @@ jobs:
         with:
           packages: |
             httr2
-            # github::mrc-ide/orderly2
 
       - run: Rscript --verbose run.R
