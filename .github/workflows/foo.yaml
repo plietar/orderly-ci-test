@@ -15,4 +15,8 @@ jobs:
         with:
           packit-url: https://packit.dide.ic.ac.uk/reside
 
-      - run: Rscript --verbose run.R
+      - run: |
+          id <- orderly2::orderly_run("data")
+          orderly2::orderly_location_push(id, "packit")
+
+        shell: Rscript {0}
