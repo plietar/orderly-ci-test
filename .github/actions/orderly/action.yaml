@@ -1,0 +1,24 @@
+name: 'orderly'
+description: 'Action to configure an orderly workflow.'
+inputs:
+  packit-url:
+    description: "URL of a packit instance to be configured as a remote location"
+    required: false
+
+  location-name:
+    description: "The name to use when adding the location"
+    default: "packit"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Install orderly2
+      shell: Rscript {0}
+      run: |
+        if (!requireNamespace("orderly2", quietly=TRUE)) {
+          install.packages(
+            "orderly2",
+            repos = c("https://mrc-ide.r-universe.dev", "https://cloud.r-project.org"))
+        }
+
+    - name: Fetch 
