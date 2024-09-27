@@ -40,5 +40,4 @@ orderly2::orderly_location_add(
   LOCATION_NAME,
   type = "packit",
   args = list(url = PACKIT_URL, token = packit_token))
-
-# TODO: ::add-mask::VALUE
+orderly2::orderly_location_pull_metadata(LOCATION_NAME)
