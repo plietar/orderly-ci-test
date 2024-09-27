@@ -12,6 +12,10 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - uses: r-lib/actions/setup-r-dependencies@v2
+      with:
+        packages: orderly2
+
     - name: Install orderly2
       shell: bash
       run: Rscript --verbose ${{ github.action_path }}/orderly-init.R
