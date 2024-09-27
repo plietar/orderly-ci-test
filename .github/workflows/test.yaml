@@ -15,7 +15,7 @@ jobs:
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           packages: |
-            any::httr2
+            httr2
             # github::mrc-ide/orderly2
 
       - run: Rscript --verbose run.R
