@@ -13,8 +13,10 @@ runs:
   using: "composite"
   steps:
     - name: Install orderly2
-      run: Rscript --verbose ${{ github.action_path }}/orderly-init.R ${{ inputs.location-name }} ${{ inputs.packit-url }}
+      shell: bash
+      run: Rscript --verbose ${{ github.action_path }}/orderly-init.R
 
     - name: Logging in to Packit
       if: ${{ inputs.packit-url != null }}
+      shell: bash
       run: Rscript --verbose ${{ github.action_path }}/packit-login.R ${{ inputs.location-name }} ${{ inputs.packit-url }}
