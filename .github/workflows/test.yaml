@@ -11,8 +11,9 @@ jobs:
         with:
           extra-repositories: https://mrc-ide.r-universe.dev
       - uses: mrc-ide/orderly-action@main
+      - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          packit-url: https://packit.dide.ic.ac.uk/reside
+          packages: testthat
 
       - run: |
           id <- orderly2::orderly_run("data")
